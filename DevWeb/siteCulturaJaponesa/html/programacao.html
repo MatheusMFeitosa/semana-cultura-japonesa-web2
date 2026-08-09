@@ -1,0 +1,60 @@
+<section id="schedule" class="eventSchedule">
+  <h2 class="sectionTitle">Programação de Oficinas</h2>
+  <table class="scheduleTable">
+    <thead>
+      <tr>
+        <th>Horário</th>
+        <th>Atividade / Oficina</th>
+        <th>Localização</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>14:00 - 15:30</td>
+        <td>Oficina: Segredos do Arroz de Sushi perfeito</td>
+        <td>Sala de Culinária A</td>
+      </tr>
+      <tr>
+        <td>16:00 - 17:30</td>
+        <td>Cerimônia Tradicional do Chá (Chanoyu)</td>
+        <td>Tenda Cultural</td>
+      </tr>
+      <tr>
+        <td>18:00 - 19:30</td>
+        <td>Apresentação de Taiko (Tambores Japoneses)</td>
+        <td>Palco Principal</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="register" class="registrationSection">
+  <h2 class="sectionTitle">Garanta sua Vaga</h2>
+  <div class="formContainer">
+    <p class="formSubtitle">A entrada é gratuita, mas as vagas para as oficinas são limitadas. Preencha seus dados para receber o passaporte digital.</p>
+
+    <form action="#" method="POST" class="eventForm">
+      <div class="formGroup">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+      </div>
+
+      <div class="formGroup">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+      </div>
+
+      <div class="formGroup">
+        <label for="interest">Oficina de Maior Interesse</label>
+        <select id="interest" name="interest" required>
+          <option value="sushi">Oficina de Sushi</option>
+          <option value="cha">Cerimônia do Chá</option>
+          <option value="lamen">Workshop de Lamen</option>
+          <option value="apenas_comer">Apenas Degustação</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submitButton">Confirmar Minha Presença</button>
+    </form>
+  </div>
+</section>
