@@ -19,7 +19,7 @@
 }
 
 html {
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
 }
 
 body {
@@ -41,10 +41,10 @@ header {
   align-items: center;
   padding: 0 5vw;
   height: 10vh;
-  background-color: rgba(247, 245, 240, 0.95); 
-  backdrop-filter: blur(5px); 
+  background-color: rgba(247, 245, 240, 0.95);
+  backdrop-filter: blur(5px);
   border-bottom: 1px solid var(--cor-borda);
-  position: sticky; 
+  position: sticky;
   top: 0;
   z-index: 100;
 }
@@ -57,7 +57,7 @@ header {
 .eventNav ul {
   display: flex;
   list-style: none;
-  gap: 2.5rem; 
+  gap: 2.5rem;
 }
 
 .eventNav a {
@@ -90,20 +90,20 @@ header {
 
 .heroBanner {
   background-image: linear-gradient(rgba(28, 29, 33, 0.75), rgba(28, 29, 33, 0.75)), url('../img/background.jpg');
-  background-size: cover; 
+  background-size: cover;
   background-position: center;
-  height: 90vh; 
-  display: flex; 
-  flex-direction: column; 
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #FFFFFF; 
+  color: #FFFFFF;
   padding: 0 5vw;
 }
 
 .eventTitle {
-  font-size: clamp(2.5rem, 5vw, 4.5rem); 
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   margin-bottom: 1rem;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -133,7 +133,11 @@ header {
   color: var(--cor-destaque);
 }
 
-.aboutEvent, .eventLineUp, .menuList, .environmentGallery, .eventSchedule {
+.aboutEvent,
+.eventLineUp,
+.menuList,
+.eventSchedule,
+.registrationSection {
   padding: 5rem 5vw;
 }
 
@@ -164,19 +168,19 @@ header {
 
 .eventProposal {
   font-size: 1.2rem;
-  color: #4A4A4A; 
+  color: #4A4A4A;
   font-style: italic;
 }
 
 .eventLineUp {
-  background-color: #FFFFFF; 
+  background-color: #FFFFFF;
 }
 
 .LineUpGrid {
   display: flex;
   justify-content: center;
   gap: 4rem;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .LineUpCard {
@@ -184,23 +188,25 @@ header {
   max-width: 250px;
 }
 
-.invitedChefImage, .restaurantImage {
+.invitedChefImage,
+.restaurantImage {
   width: 180px;
   height: 180px;
-  border-radius: 50%; 
+  border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--cor-fundo);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   margin-bottom: 1.5rem;
   transition: transform 0.3s ease;
 }
 
-.LineUpCard:hover .invitedChefImage, 
+.LineUpCard:hover .invitedChefImage,
 .LineUpCard:hover .restaurantImage {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
-.chefName, .restaurantName {
+.chefName,
+.restaurantName {
   font-size: 1.3rem;
   color: var(--cor-texto);
 }
@@ -264,32 +270,28 @@ header {
   font-size: 0.95rem;
 }
 
-.environmentGallery {
-  background-color: #FFFFFF;
-  display: grid;
-  grid-template-columns: 1fr 1.5fr; 
-  gap: 4rem;
-  align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.environmentGallery .sectionTitle {
-  grid-column: 1 / -1; 
+.audioSection {
+  padding: 4rem 5vw 1rem;
+  background-color: var(--cor-fundo);
+  display: flex;
+  justify-content: center;
 }
 
 .environmentAudio {
-  text-align: left;
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
   padding: 2.5rem;
-  background-color: var(--cor-fundo);
+  background-color: #FFFFFF;
   border-radius: 12px;
-  border-left: 5px solid var(--cor-secundaria);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-top: 5px solid var(--cor-secundaria);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.05);
 }
 
 .environmentAudio h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   color: var(--cor-secundaria);
+  font-size: 1.5rem;
 }
 
 .environmentAudio p {
@@ -300,32 +302,80 @@ header {
 .environmentAudio audio {
   width: 100%;
   border-radius: 30px;
+  outline: none;
+}
+
+.environmentGallery {
+  background-color: #FFFFFF;
+  padding: 4rem 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.environmentGallery .sectionTitle {
+  margin-bottom: 3rem;
 }
 
 .galleryGrid {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding-right: 1rem;
-}
-
-.galleryGrid img:first-child {
-  border-radius: 12px;
   width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.svgOrnament {
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.carousel-btn {
   position: absolute;
-  bottom: -25px;
-  right: -10px;
-  max-width: 140px;
-  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(28, 29, 33, 0.6);
+  color: white;
+  border: none;
+  font-size: 1.8rem;
+  padding: 12px 18px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background-color: var(--cor-destaque);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn { left: 15px; }
+.next-btn { right: 15px; }
+
+.galleryGrid .svgOrnament {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 150px;
+  z-index: 20;
   box-shadow: none;
+  pointer-events: none;
 }
 
 .scheduleTable {
@@ -334,10 +384,10 @@ header {
   margin: 0 auto;
   border-collapse: collapse;
   background-color: #FFFFFF;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-.scheduleTable th, 
+.scheduleTable th,
 .scheduleTable td {
   padding: 1.5rem;
   text-align: left;
@@ -356,12 +406,11 @@ header {
 }
 
 .scheduleTable tbody tr:hover {
-  background-color: #E2E8F0; 
+  background-color: #E2E8F0;
 }
 
 .registrationSection {
   background-color: #FFFFFF;
-  padding: 5rem 5vw;
 }
 
 .formContainer {
@@ -371,7 +420,7 @@ header {
   padding: 3rem;
   border-radius: 8px;
   border: 1px solid var(--cor-borda);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
 .formSubtitle {
@@ -397,7 +446,7 @@ header {
   color: var(--cor-texto);
 }
 
-.formGroup input, 
+.formGroup input,
 .formGroup select {
   padding: 1rem;
   border: 1px solid #CCC;
@@ -407,7 +456,7 @@ header {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.formGroup input:focus, 
+.formGroup input:focus,
 .formGroup select:focus {
   outline: none;
   border-color: var(--cor-destaque);
@@ -439,7 +488,7 @@ header {
 .eventFooter {
   background-color: var(--cor-rodape);
   color: #FFFFFF;
-  padding: 4rem 5vw 2rem; 
+  padding: 4rem 5vw 2rem;
   text-align: center;
 }
 
@@ -456,7 +505,7 @@ header {
 
 .footerContent p {
   margin-bottom: 0.5rem;
-  opacity: 0.8; 
+  opacity: 0.8;
 }
 
 .copyright {
@@ -503,42 +552,43 @@ header {
     margin-bottom: 2rem;
   }
 
-  .aboutEvent, .eventLineUp, .menuList, .environmentGallery, .eventSchedule, .registrationSection {
+  .aboutEvent,
+  .eventLineUp,
+  .menuList,
+  .eventSchedule,
+  .registrationSection,
+  .environmentGallery,
+  .audioSection {
     padding: 3rem 5vw;
   }
 
   .LineUpGrid {
     gap: 2rem;
   }
-  .environmentGallery {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
 
-  .scheduleTable th, 
+  .scheduleTable th,
   .scheduleTable td {
-    padding: 1rem; 
+    padding: 1rem;
     font-size: 0.9rem;
   }
 
   .formContainer {
     padding: 1.5rem;
   }
+  
+  .carousel-slide {
+    height: 300px;
+  }
+  
+  .galleryGrid .svgOrnament {
+    width: 100px;
+    bottom: -20px;
+    right: -10px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .eventTitle {
     font-size: 3rem;
-  }
-  
-  .environmentGallery {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 1200px) {
-  .menuGrid, .environmentGallery, .scheduleTable {
-    max-width: 1100px;
-    margin: 0 auto; 
   }
 }
