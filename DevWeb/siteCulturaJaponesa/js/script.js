@@ -1,4 +1,3 @@
-// 1. CARREGADOR DE PÁGINAS
 function loadComponent(containerId, filePath) {
   fetch(filePath)
     .then(response => response.text())
@@ -13,13 +12,26 @@ loadComponent('menu-content', 'cardapio.html');
 loadComponent('schedule-content', 'programacao.html');
 
 setTimeout(() => {
+  
+  const menuLinks = document.querySelectorAll('.eventNav a[href^="#"]');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault(); 
+      const sectionId = this.getAttribute('href'); 
+      const targetSection = document.querySelector(sectionId); 
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
   const track = document.querySelector('.carousel-track');
   const slides = document.querySelectorAll('.carousel-slide');
   const nextBtn = document.querySelector('.next-btn');
   const prevBtn = document.querySelector('.prev-btn');
 
   if (track && slides.length > 0) {
-    let currentIndex = 0; 
+    let currentIndex = 0;
 
     function updateCarousel() {
       const moveAmount = currentIndex * 100;
@@ -44,4 +56,22 @@ setTimeout(() => {
       updateCarousel();
     });
   }
-}, 1000);
+
+}, 1000); 
+
+document.addEventListener('submit', function (event) {
+  event.preventDefault(); 
+
+  const form = event.target;
+  const formSubtitle = document.getElementById('form-subtitle');
+  const successMessage = document.getElementById('success-message');
+
+  if (formSubtitle) {
+    formSubtitle.classList.add('hidden');
+  }
+  form.classList.add('hidden');
+
+  if (successMessage) {
+    successMessage.classList.remove('hidden');
+  }
+});
