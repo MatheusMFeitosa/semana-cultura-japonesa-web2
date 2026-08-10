@@ -12,13 +12,13 @@ loadComponent('menu-content', 'cardapio.html');
 loadComponent('schedule-content', 'programacao.html');
 
 setTimeout(() => {
-  
+
   const menuLinks = document.querySelectorAll('.eventNav a[href^="#"]');
   menuLinks.forEach(link => {
-    link.addEventListener('click', function(event) {
-      event.preventDefault(); 
-      const sectionId = this.getAttribute('href'); 
-      const targetSection = document.querySelector(sectionId); 
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      const sectionId = this.getAttribute('href');
+      const targetSection = document.querySelector(sectionId);
       if (targetSection) {
         targetSection.scrollIntoView({ behavior: 'smooth' });
       }
@@ -57,10 +57,29 @@ setTimeout(() => {
     });
   }
 
-}, 1000); 
+  const elementosParaAnimar = document.querySelectorAll('.sectionTitle, .aboutEvent p, .LineUpCard, .menuItem, .formContainer, .environmentAudio');
+
+  elementosParaAnimar.forEach(el => el.classList.add('reveal-hidden'));
+
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add('reveal-visible');
+
+        observador.unobserve(entrada.target);
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  elementosParaAnimar.forEach(el => observador.observe(el));
+
+}, 1000);
 
 document.addEventListener('submit', function (event) {
-  event.preventDefault(); 
+  event.preventDefault();
 
   const form = event.target;
   const formSubtitle = document.getElementById('form-subtitle');
